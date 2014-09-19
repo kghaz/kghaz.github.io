@@ -84,22 +84,22 @@ $(function() {
 
 		.ot-letter-left { background: #00713f; }
 		.ot-letter-left span { text-shadow: 1px 4px 6px #00713f, 0 0 0 hsla(0, 0%, 0%, 0.3), 1px 4px 6px #00713f; }
-		.ot-letter-left span:after { color: #00713f; }
+		.ot-letter-left span:after { color: #ffbf0b; }
 		.ot-letter-left:hover span:after { color: #09a662; }
 
 		.ot-letter-right { background: #00713f; }
 		.ot-letter-right span { text-shadow: 1px 4px 6px #00713f, 0 0 0 hsla(0, 0%, 0%, 0.3), 1px 4px 6px #00713f; }
-		.ot-letter-right span:after { color: #00713f; }
+		.ot-letter-right span:after { color: #ffbf0b; }
 		.ot-letter-right:hover span:after { color: #09a662; }
 
 		.ot-letter-top { background: #00713f; }
 		.ot-letter-top span { text-shadow: 1px 4px 6px #00713f, 0 0 0 hsla(0, 0%, 0%, 0.3), 1px 4px 6px #00713f; }
-		.ot-letter-top span:after { color: #00713f; }
+		.ot-letter-top span:after { color: #ffbf0b; }
 		.ot-letter-top:hover span:after { color: #09a662; }
 
 		.ot-letter-bottom { background: #00713f; }
 		.ot-letter-bottom span { text-shadow: 1px 4px 6px #00713f, 0 0 0 hsla(0, 0%, 0%, 0.3), 1px 4px 6px #00713f; }
-		.ot-letter-bottom span:after { color: #00713f; }
+		.ot-letter-bottom span:after { color: #ffbf0b; }
 		.ot-letter-bottom:hover span:after { color: #09a662; }
 
 		/* Left */
@@ -368,9 +368,83 @@ $(function() {
 			-moz-transform: translateX(-50%) translateY(-50%) scale(1);
 			transform: translateX(-50%) translateY(-50%) scale(1);
 		}
+		
+/* Effect 13: border switch */
+.cl-effect-13 a {
+padding: 0 20px;
+height: 45px;
+line-height: 45px;
+}
+ 
+.cl-effect-13 a::before,
+.cl-effect-13 a::after {
+position: absolute;
+width: 45px;
+height: 2px;
+background: #fff;
+content: '';
+opacity: 0.2;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+pointer-events: none;
+}
+ 
+.cl-effect-13 a::before {
+top: 0;
+left: 0;
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+transform: rotate(90deg);
+-webkit-transform-origin: 0 0;
+-moz-transform-origin: 0 0;
+transform-origin: 0 0;
+}
+ 
+.cl-effect-13 a::after {
+right: 0;
+bottom: 0;
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+transform: rotate(90deg);
+-webkit-transform-origin: 100% 0;
+-moz-transform-origin: 100% 0;
+transform-origin: 100% 0;
+}
+ 
+.cl-effect-13 a:hover::before,
+.cl-effect-13 a:hover::after,
+.cl-effect-13 a:focus::before,
+.cl-effect-13 a:focus::after {
+opacity: 1;
+}
+ 
+.cl-effect-13 a:hover::before,
+.cl-effect-13 a:focus::before {
+left: 50%;
+-webkit-transform: rotate(0deg) translateX(-50%);
+-moz-transform: rotate(0deg) translateX(-50%);
+transform: rotate(0deg) translateX(-50%);
+}
+ 
+.cl-effect-13 a:hover::after,
+.cl-effect-13 a:focus::after {
+right: 50%;
+-webkit-transform: rotate(0deg) translateX(50%);
+-moz-transform: rotate(0deg) translateX(50%);
+transform: rotate(0deg) translateX(50%);
+}
+		
+		
 		.content {
-		color:#fff;
-		font-family: "BYekan";
+			color:#fff;
+			font-family: "BYekan";
+		}
+		#about {
+			font-size:30px;
+		}
+		#works {
+			font-size:30px;
 		}
 	</style>
 </head>
@@ -382,15 +456,24 @@ $(function() {
 	    <li class="ot-letter-top"><span data-letter="A">A</span></li>
 	    <li class="ot-letter-left"><span data-letter="Z">Z</span></li>
 	</ul>
-	<div class="cl-effect-11" id="cl-effect-11">
+	<div class="cl-effect-11">
 		<a href="#home">صفحه اول</a>
 		<a href="#about">درباره ما</a>
 		<a href="#works">نمونه کار های ما</a>
 	</div>
 	<div class="content">
-	<p>.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br /><p>
-	<div id="about">سلام</div>
-	<p>.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br /><p>
+	<p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><p>
+	<div id="about">درباره ما</div>
+	<p>گروه کاغذ شامل چهار نفر میباشد که در ضمینه طراحی وب و موبایل فعالیت میکنند.</p>
+	<p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><p>
+	<div id="works">کار های ما</div>
+	<div class="cl-effect-13">
+	<a href="3D-Menu.html">نمونه کار 1</a>
+	<a href="cross-browser-text-bg-animate/cross-browser-text-bg-animate.html">نمونه کار 2</a>
+	<a href="Sticker/Sticker.html">نمونه کار 3</a>
 	</div>
+	<p><br /><br /><br /><br /><br /><br /><br /><p>
+	</div>
+	
 </body>
 </html>
